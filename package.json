@@ -1,0 +1,32 @@
+{
+  "name": "groceyish",
+  "description": "Don't miss our daily amazing deals. Save up to 60% off on your first order",
+  "version": "1.0.0",
+  "author": "MuhammadM1998",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MuhammadM1998/Groceyish"
+  },
+  "homepage": "",
+  "license": "MIT",
+  "private": true,
+  "packageManager": "pnpm@7.5.0",
+  "scripts": {
+    "build": "nuxi build",
+    "dev": "nuxi dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.25.2",
+    "@iconify-json/carbon": "^1.1.6",
+    "@iconify-json/twemoji": "^1.1.5",
+    "@nuxtjs/color-mode": "^3.1.4",
+    "@pinia/nuxt": "^0.1.9",
+    "@unocss/nuxt": "^0.43.2",
+    "@vueuse/nuxt": "^8.8.0",
+    "eslint": "^8.19.0",
+    "nuxt": "^3.0.0-rc.4",
+    "pinia": "^2.0.14"
+  }
+}
