@@ -1,0 +1,10 @@
+node_modules
+*.log*
+dist
+.nuxt
+.nitro
+.cache
+.output
+.env
+desktop.ini
+coverage

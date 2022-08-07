@@ -1,0 +1,77 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "Product",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "Brand": {
+      "type": "string",
+      "required": true
+    },
+    "Image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "Price_Current": {
+      "type": "decimal",
+      "required": true,
+      "min": 0
+    },
+    "Price_Original": {
+      "type": "decimal",
+      "min": 0
+    },
+    "Price_Currency": {
+      "type": "enumeration",
+      "enum": [
+        "EGP",
+        "USD",
+        "EUR"
+      ],
+      "default": "EGP",
+      "required": true
+    },
+    "Rating_Value": {
+      "type": "decimal",
+      "min": 0
+    },
+    "Rating_Users": {
+      "type": "decimal",
+      "min": 0
+    },
+    "isFeatured": {
+      "type": "boolean",
+      "default": false
+    },
+    "isBestDeal": {
+      "type": "boolean",
+      "default": false
+    },
+    "isDailyBestSell": {
+      "type": "boolean",
+      "default": false
+    },
+    "Category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "Products"
+    }
+  }
+}

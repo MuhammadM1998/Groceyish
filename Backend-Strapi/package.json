@@ -1,0 +1,35 @@
+{
+  "name": "groceyish-strapi",
+  "description": "The Strapi backend for the groceyish app",
+  "version": "1.0.0",
+  "author": "MuhammadM1998",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MuhammadM1998/Groceyish"
+  },
+  "homepage": "https://groceyish.vercel.app/",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "develop": "strapi develop",
+    "build": "strapi build",
+    "start": "strapi start",
+    "strapi": "strapi"
+  },
+  "dependencies": {
+    "@strapi/plugin-i18n": "4.3.0",
+    "@strapi/plugin-users-permissions": "4.3.0",
+    "@strapi/provider-upload-cloudinary": "^4.3.0",
+    "@strapi/strapi": "4.3.0",
+    "@strapi/utils": "^4.3.0",
+    "pg": "8.6.0",
+    "pg-connection-string": "^2.5.0"
+  },
+  "strapi": {
+    "uuid": "5eb81412-0e43-4ca9-9c42-219d4d67ed92"
+  },
+  "engines": {
+    "node": ">=12.x.x <=16.x.x",
+    "npm": ">=6.0.0"
+  }
+}
