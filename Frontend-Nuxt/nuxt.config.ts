@@ -90,6 +90,7 @@ export default defineNuxtConfig({
   },
 
   modules: [
+    '@unocss/nuxt',
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
     '@vueuse/nuxt',
@@ -97,6 +98,16 @@ export default defineNuxtConfig({
     'nuxt-icons',
     '@nuxtjs/strapi',
   ],
+
+  unocss: {
+    uno: false, // Disable the enabled-by-default preset to prevent conflicts with tailwind
+    icons: {
+      extraProperties: {
+        display: 'block',
+      },
+    },
+    attributify: true,
+  },
 
   image: {
     provider: 'cloudinary',
@@ -108,7 +119,7 @@ export default defineNuxtConfig({
     },
 
     screens: {
-      '4xs': 375,
+      '4xs': 360,
       '3xs': 400,
       '2xs': 480,
       xs: 560,

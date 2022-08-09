@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth font-quicksand font-normal text-blue-200;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  h2 {
+    @apply font-semibold text-[28px] lg:text-[32px];
+  }
+
+  h3 {
+    @apply font-semibold text-2xl;
+  }
+
+  .app {
+    &-button {
+      @apply flex items-center gap-2 rounded py-2 px-4 font-semibold bg-green-200 text-white;
+
+      span {
+        @apply text-2xl;
+      }
+    }
+
+    &-text-lg {
+      @apply font-semibold text-lg;
+    }
+  }
+}
+
+span.nuxt-icon svg {
+  @apply m-0;
+}

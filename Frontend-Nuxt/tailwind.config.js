@@ -2,11 +2,16 @@ module.exports = {
   theme: {
     container: {
       center: true,
-      padding: '2rem',
+      padding: '1rem',
     },
 
     extend: {
-      colors: {},
+      colors: {
+        green: { 100: '#DEF9EC', 200: '#237D64' },
+        blue: { 100: '#F2F3F4', 200: '#253D4E' },
+        yellow: { 100: '#FFD480', 200: '#FDC040' },
+        gray: { 100: '#F1F1F1', 200: '#636363' },
+      },
 
       screens: {
         '4xs': '360px',
@@ -20,15 +25,18 @@ module.exports = {
         xxl: '1440px',
       },
 
-      backgroundColor: {},
-
-      backgroundImage: {},
+      backgroundImage: {
+        overlayGreen:
+          "linear-gradient(0deg, rgba(204, 233, 220, 0.7), rgba(204, 233, 220, 0.7)), url('https://res.cloudinary.com/cloud-m98/image/upload/v1658064467/Groceyish/Vegtables-Illustrations.webp')",
+        overlayYellow:
+          "linear-gradient(0deg, rgba(255, 245, 225, 0.7), rgba(255, 245, 225, 0.7)), url('https://res.cloudinary.com/cloud-m98/image/upload/v1658064467/Groceyish/Vegtables-Illustrations.webp')",
+      },
 
       fontFamily: {
         quicksand: ['Quicksand', 'sans-serif'],
       },
-
-      animation: {},
     },
   },
+
+  plugins: [require('@tailwindcss/line-clamp')],
 };
