@@ -132,7 +132,7 @@
 
 <style scoped lang="scss">
   .nav {
-    @apply absolute w-full;
+    @apply absolute w-full z-10 bg-white;
     @apply lg:border-b lg:border-green-200 lg:static;
     @apply transition-transform translate-x-full;
     @apply lg:translate-x-0;

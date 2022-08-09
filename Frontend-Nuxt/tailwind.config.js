@@ -30,6 +30,12 @@ module.exports = {
           "linear-gradient(0deg, rgba(204, 233, 220, 0.7), rgba(204, 233, 220, 0.7)), url('https://res.cloudinary.com/cloud-m98/image/upload/v1658064467/Groceyish/Vegtables-Illustrations.webp')",
         overlayYellow:
           "linear-gradient(0deg, rgba(255, 245, 225, 0.7), rgba(255, 245, 225, 0.7)), url('https://res.cloudinary.com/cloud-m98/image/upload/v1658064467/Groceyish/Vegtables-Illustrations.webp')",
+        'intro-slide-1':
+          "url('https://res.cloudinary.com/cloud-m98/image/upload/v1658690948/Groceyish/slider-1.webp')",
+        'intro-slide-2':
+          "url('https://res.cloudinary.com/cloud-m98/image/upload/v1658690948/Groceyish/slider-2.webp')",
+        'intro-slide-3':
+          "url('https://res.cloudinary.com/cloud-m98/image/upload/v1658690948/Groceyish/slider-3.webp')",
       },
 
       fontFamily: {

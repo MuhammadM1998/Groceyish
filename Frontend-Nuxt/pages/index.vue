@@ -1,3 +1,5 @@
 <template>
-  <div></div>
+  <main>
+    <SectionIntro />
+  </main>
 </template>

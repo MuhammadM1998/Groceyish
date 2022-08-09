@@ -8,12 +8,20 @@
     -webkit-tap-highlight-color: transparent;
   }
 
+  h1 {
+    @apply font-bold text-[56px] leading-none;
+  }
+
   h2 {
     @apply font-semibold text-[28px] lg:text-[32px];
   }
 
   h3 {
     @apply font-semibold text-2xl;
+  }
+
+  button {
+    @apply outline-none;
   }
 
   .app {
