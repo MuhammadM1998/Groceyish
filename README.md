@@ -1,4 +1,4 @@
-# EGSA
+# Groceyish
 
 E-Commerce Website for selling groceries online.
 
@@ -11,7 +11,8 @@ E-Commerce Website for selling groceries online.
 
 ### ‍💻 Stack
 
-![Nuxtjs](https://img.shields.io/badge/Nuxt-002E3B?style=for-the-badge&logo=nuxtdotjs&logoColor=#00DC82)
+![Nuxtjs](https://img.shields.io/badge/Nuxt-002E3B?logo=nuxtdotjs&style=for-the-badge)
+![UnoCSS](https://img.shields.io/badge/-UnoCSS-1?style=for-the-badge&logo=unocss&color=333333)
 ![Tailwind CSS](https://img.shields.io/badge/-Tailwind%20CSS-%231a202c?style=for-the-badge&logo=tailwind-css)
 ![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
 ![Stripe](https://img.shields.io/badge/Stripe-008CDD?style=for-the-badge&logo=Stripe&logoColor=white)
