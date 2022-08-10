@@ -13,7 +13,7 @@
   }
 
   h2 {
-    @apply text-[28px] font-semibold lg:text-[32px];
+    @apply text-[28px] font-semibold leading-none  lg:text-[32px];
   }
 
   h3 {
@@ -23,7 +23,9 @@
   button {
     @apply outline-none;
   }
+}
 
+@layer components {
   .app {
     &-section {
       @apply py-8;
