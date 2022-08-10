@@ -25,6 +25,10 @@ module.exports = {
         xxl: '1440px',
       },
 
+      fontFamily: {
+        quicksand: ['Quicksand', 'sans-serif'],
+      },
+
       backgroundImage: {
         overlayGreen:
           "linear-gradient(0deg, rgba(204, 233, 220, 0.7), rgba(204, 233, 220, 0.7)), url('https://res.cloudinary.com/cloud-m98/image/upload/v1658064467/Groceyish/Vegtables-Illustrations.webp')",
@@ -36,10 +40,10 @@ module.exports = {
           "url('https://res.cloudinary.com/cloud-m98/image/upload/v1658690948/Groceyish/slider-2.webp')",
         'intro-slide-3':
           "url('https://res.cloudinary.com/cloud-m98/image/upload/v1658690948/Groceyish/slider-3.webp')",
-      },
-
-      fontFamily: {
-        quicksand: ['Quicksand', 'sans-serif'],
+        'banner-1':
+          "url('https://res.cloudinary.com/cloud-m98/image/upload/v1658851601/Groceyish/Banner-1.webp')",
+        'banner-2':
+          "url('https://res.cloudinary.com/cloud-m98/image/upload/v1658851601/Groceyish/Banner-2.webp')",
       },
     },
   },

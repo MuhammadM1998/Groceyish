@@ -4,20 +4,20 @@
 
 @layer base {
   html {
-    @apply scroll-smooth font-quicksand font-normal text-blue-200;
+    @apply overflow-x-hidden scroll-smooth font-quicksand font-normal text-blue-200;
     -webkit-tap-highlight-color: transparent;
   }
 
   h1 {
-    @apply font-bold text-[56px] leading-none;
+    @apply text-[56px] font-bold leading-none;
   }
 
   h2 {
-    @apply font-semibold text-[28px] lg:text-[32px];
+    @apply text-[28px] font-semibold lg:text-[32px];
   }
 
   h3 {
-    @apply font-semibold text-2xl;
+    @apply text-2xl font-semibold;
   }
 
   button {
@@ -25,8 +25,12 @@
   }
 
   .app {
+    &-section {
+      @apply py-8;
+    }
+
     &-button {
-      @apply flex items-center gap-2 rounded py-2 px-4 font-semibold bg-green-200 text-white;
+      @apply flex items-center gap-2 rounded bg-green-200 py-2 px-4 font-semibold text-white hover:opacity-90;
 
       span {
         @apply text-2xl;
@@ -34,7 +38,7 @@
     }
 
     &-text-lg {
-      @apply font-semibold text-lg;
+      @apply text-lg font-semibold;
     }
   }
 }
