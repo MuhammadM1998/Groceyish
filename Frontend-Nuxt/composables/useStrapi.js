@@ -36,5 +36,17 @@ export const useStrapi = () => {
       });
       return shuffle(data);
     },
+
+    getDailyBestSells: async () => {
+      const { data } = await find('products', {
+        populate: '*',
+        filters: {
+          isDailyBestSell: {
+            $eq: true,
+          },
+        },
+      });
+      return shuffle(data);
+    },
   };
 };

@@ -110,7 +110,7 @@
         .footer-list {
           @apply flex flex-col gap-4;
 
-          li {
+          a {
             @apply hover:text-green-200;
           }
         }

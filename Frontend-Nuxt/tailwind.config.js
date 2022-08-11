@@ -44,6 +44,8 @@ module.exports = {
           "url('https://res.cloudinary.com/cloud-m98/image/upload/v1658851601/Groceyish/Banner-1.webp')",
         'banner-2':
           "url('https://res.cloudinary.com/cloud-m98/image/upload/v1658851601/Groceyish/Banner-2.webp')",
+        'banner-3':
+          "url('https://res.cloudinary.com/cloud-m98/image/upload/v1659276234/Groceyish/Banner-3.webp')",
       },
     },
   },

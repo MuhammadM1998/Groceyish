@@ -32,7 +32,7 @@
     }
 
     &-button {
-      @apply flex items-center gap-2 rounded bg-green-200 py-2 px-4 font-semibold text-white hover:opacity-90;
+      @apply flex items-center gap-2 rounded bg-green-200 py-2 px-4 font-semibold text-white hover:opacity-90 text-center;
 
       span {
         @apply text-2xl;

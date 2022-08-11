@@ -4,6 +4,7 @@
     <SectionCategories />
     <SectionFeatured />
     <SectionBanners />
+    <SectionDailyBestSells />
     <SectionMobileApp />
     <SectionPerks />
   </main>
