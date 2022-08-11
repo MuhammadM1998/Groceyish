@@ -3,5 +3,6 @@
     <SectionIntro />
     <SectionCategories />
     <SectionBanners />
+    <SectionMobileApp />
   </main>
 </template>

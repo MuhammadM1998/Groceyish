@@ -1,46 +1,46 @@
 <script setup>
-// Swiper
-import { SwiperSlide } from "swiper/vue";
-const swiperOptions = {
-  pagination: false,
-  navigation: {
-    prevEl: ".category-swiper-prev",
-    nextEl: ".category-swiper-next",
-  },
-  breakpoints: {
-    480: {
-      slidesPerView: 2,
+  // Swiper
+  import { SwiperSlide } from 'swiper/vue';
+  const swiperOptions = {
+    pagination: false,
+    navigation: {
+      prevEl: '.category-swiper-prev',
+      nextEl: '.category-swiper-next',
     },
-    640: {
-      slidesPerView: 3,
+    breakpoints: {
+      480: {
+        slidesPerView: 2,
+      },
+      640: {
+        slidesPerView: 3,
+      },
+      768: {
+        slidesPerView: 4,
+      },
+      1024: {
+        slidesPerView: 5,
+      },
+      1280: {
+        slidesPerView: 6,
+      },
+      1440: {
+        slidesPerView: 7,
+      },
     },
-    768: {
-      slidesPerView: 4,
-    },
-    1024: {
-      slidesPerView: 5,
-    },
-    1280: {
-      slidesPerView: 6,
-    },
-    1440: {
-      slidesPerView: 7,
-    },
-  },
-};
+  };
 
-// Strapi
-const isLoading = ref(true);
-const categories = reactive({});
-const getCategories = async () => {
-  isLoading.value = true;
-  const data = await useStrapi().getCategories();
-  Object.assign(categories, data);
-  isLoading.value = false;
-};
-onMounted(() => {
-  getCategories();
-});
+  // Strapi
+  const isLoading = ref(true);
+  const categories = reactive({});
+  const getCategories = async () => {
+    isLoading.value = true;
+    const data = await useStrapi().getCategories();
+    Object.assign(categories, data);
+    isLoading.value = false;
+  };
+  onMounted(() => {
+    getCategories();
+  });
 </script>
 
 <template>
@@ -69,7 +69,7 @@ onMounted(() => {
 </template>
 
 <style scoped lang="scss">
-.wrapper {
-  @apply container flex flex-col gap-4;
-}
+  .wrapper {
+    @apply container flex flex-col gap-4;
+  }
 </style>

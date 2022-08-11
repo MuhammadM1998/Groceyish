@@ -31,7 +31,7 @@ module.exports = {
 
       backgroundImage: {
         overlayGreen:
-          "linear-gradient(0deg, rgba(204, 233, 220, 0.7), rgba(204, 233, 220, 0.7)), url('https://res.cloudinary.com/cloud-m98/image/upload/v1658064467/Groceyish/Vegtables-Illustrations.webp')",
+          "linear-gradient(#c5ead9cc, #c5ead9cc), url('https://res.cloudinary.com/cloud-m98/image/upload/o_25/v1658064467/Groceyish/Vegtables-Illustrations.webp')",
         overlayYellow:
           "linear-gradient(0deg, rgba(255, 245, 225, 0.7), rgba(255, 245, 225, 0.7)), url('https://res.cloudinary.com/cloud-m98/image/upload/v1658064467/Groceyish/Vegtables-Illustrations.webp')",
         'intro-slide-1':
