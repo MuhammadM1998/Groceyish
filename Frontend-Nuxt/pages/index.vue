@@ -5,5 +5,6 @@
     <SectionFeatured />
     <SectionBanners />
     <SectionMobileApp />
+    <SectionPerks />
   </main>
 </template>
