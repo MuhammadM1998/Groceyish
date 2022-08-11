@@ -1,9 +1,9 @@
 <script setup>
-import { SwiperSlide } from "swiper/vue";
+  import { SwiperSlide } from 'swiper/vue';
 
-defineProps({
-  swiperOptions: { type: Object, required: false, default: () => {} },
-});
+  defineProps({
+    swiperOptions: { type: Object, required: false, default: () => {} },
+  });
 </script>
 
 <template>

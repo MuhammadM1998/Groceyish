@@ -123,7 +123,7 @@
       <!-- Customer Support Section -->
       <section class="customer-support">
         <span i-bx-support class="text-2xl text-green-200"></span>
-        <p class="text-green-200 font-semibold font-lg">1233-7777</p>
+        <p class="font-lg font-semibold text-green-200">1233-7777</p>
         <p class="font-medium">24/7 Support Center</p>
       </section>
     </div>
@@ -132,9 +132,9 @@
 
 <style scoped lang="scss">
   .nav {
-    @apply absolute w-full z-10 bg-white;
-    @apply lg:border-b lg:border-green-200 lg:static;
-    @apply transition-transform translate-x-full;
+    @apply absolute z-10 w-full bg-white;
+    @apply lg:static lg:border-b lg:border-green-200;
+    @apply translate-x-full transition-transform;
     @apply lg:translate-x-0;
 
     &.nav--visible {
@@ -142,18 +142,18 @@
     }
 
     .wrapper {
-      @apply flex flex-col lg:flex-row lg:justify-between lg:container;
+      @apply flex flex-col lg:container lg:flex-row lg:justify-between;
     }
 
     .nav-section {
-      @apply border-b border-green-200 py-4 block lg:border-0;
+      @apply block border-b border-green-200 py-4 lg:border-0;
       .container {
         @apply flex flex-col gap-2;
-        @apply lg:flex-row lg:items-center lg:gap-4 lg:p-0 lg:w-full;
+        @apply lg:w-full lg:flex-row lg:items-center lg:gap-4 lg:p-0;
       }
 
       ul {
-        @apply flex flex-col gap-2 lg:flex-row lg:gap-4 lg:items-center;
+        @apply flex flex-col gap-2 lg:flex-row lg:items-center lg:gap-4;
       }
 
       span {
@@ -166,12 +166,12 @@
       @apply flex items-center gap-2;
 
       &--active {
-        @apply text-green-200 font-semibold;
+        @apply font-semibold text-green-200;
       }
     }
 
     .user {
-      @apply font-semibold text-lg lg:hidden;
+      @apply text-lg font-semibold lg:hidden;
     }
 
     .contact-us {
@@ -192,13 +192,13 @@
       ul {
         @apply flex-row text-white;
         li {
-          @apply bg-green-200 rounded-full p-2;
+          @apply rounded-full bg-green-200 p-2;
         }
       }
     }
 
     .customer-support {
-      @apply hidden lg:flex items-center gap-2;
+      @apply hidden items-center gap-2 lg:flex;
     }
   }
 </style>

@@ -9,7 +9,7 @@
 </script>
 
 <template>
-  <div class="flex flex-col gap-2 relative">
+  <div class="relative flex flex-col gap-2">
     <div class="flex items-center gap-2">
       <img src="https://picsum.photos/200" alt="User Image" />
       <p class="line-clamp-1">Muhammad Mahmoud</p>
@@ -25,7 +25,7 @@
 <style scoped lang="scss">
   div {
     img {
-      @apply rounded-full w-12 h-12 bg-white p-0.5 border-2 border-green-200;
+      @apply h-12 w-12 rounded-full border-2 border-green-200 bg-white p-0.5;
     }
   }
 </style>

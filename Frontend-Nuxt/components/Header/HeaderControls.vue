@@ -17,7 +17,7 @@
     @apply border-b border-green-200 py-2;
 
     .wrapper {
-      @apply container flex justify-between items-center flex-wrap gap-2;
+      @apply container flex flex-wrap items-center justify-between gap-2;
 
       .cart-user {
         @apply flex items-center gap-8 lg:order-last;

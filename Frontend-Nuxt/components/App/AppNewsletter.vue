@@ -18,8 +18,8 @@
       @apply relative;
 
       input {
-        @apply text-green-200 font-medium;
-        @apply w-full py-3 pr-4 pl-10 border border-green-200 outline-none rounded-l;
+        @apply font-medium text-green-200;
+        @apply w-full rounded-l border border-green-200 py-3 pr-4 pl-10 outline-none;
 
         &::placeholder {
           @apply font-normal;
@@ -27,7 +27,7 @@
       }
 
       span {
-        @apply text-2xl text-green-200 absolute left-2 top-1/2 -translate-y-1/2;
+        @apply absolute left-2 top-1/2 -translate-y-1/2 text-2xl text-green-200;
       }
     }
   }

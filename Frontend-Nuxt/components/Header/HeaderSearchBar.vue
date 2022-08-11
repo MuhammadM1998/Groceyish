@@ -10,8 +10,8 @@
     @apply relative w-full lg:max-w-xs;
 
     input {
-      @apply text-green-200 font-medium;
-      @apply border border-green-200 outline-none rounded;
+      @apply font-medium text-green-200;
+      @apply rounded border border-green-200 outline-none;
       @apply w-full py-3 pl-4 pr-10;
 
       &::placeholder {

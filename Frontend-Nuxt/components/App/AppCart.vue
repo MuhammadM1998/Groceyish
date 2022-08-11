@@ -14,17 +14,17 @@
 
 <style scoped lang="scss">
   .cart {
-    @apply flex gap-2 items-center font-medium;
+    @apply flex items-center gap-2 font-medium;
 
     .cart-items {
-      @apply text-white text-[8px] font-bold;
-      @apply bg-green-200 border-2 border-white rounded-full;
+      @apply text-[8px] font-bold text-white;
+      @apply rounded-full border-2 border-white bg-green-200;
       @apply grid place-content-center;
-      @apply w-[18px] h-[18px] absolute top-0 -right-1.5;
+      @apply absolute top-0 -right-1.5 h-[18px] w-[18px];
     }
 
     .cart-price {
-      @apply text-green-200 text-sm;
+      @apply text-sm text-green-200;
     }
   }
 </style>

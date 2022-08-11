@@ -1,7 +1,7 @@
 <script setup>
-defineProps({
-  name: { type: String, required: true },
-});
+  defineProps({
+    name: { type: String, required: true },
+  });
 </script>
 
 <template>
@@ -17,16 +17,16 @@ defineProps({
 </template>
 
 <style scoped lang="scss">
-.swiper-controls {
-  @apply flex  gap-2;
+  .swiper-controls {
+    @apply flex  gap-2;
 
-  button {
-    @apply flex w-fit items-center justify-center  p-2;
-    @apply rounded-full bg-gray-100 transition-colors  hover:bg-green-200 hover:text-white;
+    button {
+      @apply flex w-fit items-center justify-center  p-2;
+      @apply rounded-full bg-gray-100 transition-colors  hover:bg-green-200 hover:text-white;
 
-    span {
-      @apply text-xl;
+      span {
+        @apply text-xl;
+      }
     }
   }
-}
 </style>

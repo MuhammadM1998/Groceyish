@@ -23,25 +23,25 @@
 </template>
 
 <style scoped lang="scss">
-.wrapper {
-  @apply container flex flex-col items-center justify-center gap-4 lg:flex-row;
-}
-
-.banner {
-  @apply w-full max-w-[600px] py-8 px-12;
-  @apply flex flex-col justify-center gap-4;
-  @apply rounded-lg bg-cover bg-no-repeat shadow-lg;
-
-  > * {
-    @apply 2xs:max-w-[90%] xs:max-w-[80%];
+  .wrapper {
+    @apply container flex flex-col items-center justify-center gap-4 lg:flex-row;
   }
 
-  p {
-    @apply font-medium text-gray-200;
-  }
+  .banner {
+    @apply w-full max-w-[600px] py-8 px-12;
+    @apply flex flex-col justify-center gap-4;
+    @apply rounded-lg bg-cover bg-no-repeat shadow-lg;
 
-  button {
-    @apply w-fit;
+    > * {
+      @apply 2xs:max-w-[90%] xs:max-w-[80%];
+    }
+
+    p {
+      @apply font-medium text-gray-200;
+    }
+
+    button {
+      @apply w-fit;
+    }
   }
-}
 </style>

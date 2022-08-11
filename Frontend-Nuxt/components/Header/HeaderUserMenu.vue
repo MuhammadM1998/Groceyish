@@ -32,8 +32,8 @@
 <style scoped lang="scss">
   .user-menu {
     @apply flex flex-col gap-2;
-    @apply lg:hidden lg:p-4 lg:bg-white lg:border-b-4 lg:border-green-200 lg:shadow lg:rounded-lg;
-    @apply lg:absolute lg:right-0 lg:top-full lg:w-full lg:mt-2 lg:z-10;
+    @apply lg:hidden lg:rounded-lg lg:border-b-4 lg:border-green-200 lg:bg-white lg:p-4 lg:shadow;
+    @apply lg:absolute lg:right-0 lg:top-full lg:z-10 lg:mt-2 lg:w-full;
 
     &--visible {
       @apply flex;
