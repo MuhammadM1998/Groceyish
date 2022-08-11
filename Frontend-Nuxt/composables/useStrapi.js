@@ -1,6 +1,19 @@
 export const useStrapi = () => {
   const { find } = useStrapi4();
 
+  // An Array Shuffling function based on Fisher-Yates Algorithm
+  const shuffle = (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const temp = array[i];
+
+      // Swap
+      array[i] = array[j];
+      array[j] = temp;
+    }
+    return array;
+  };
+
   return {
     getCategories: async () => {
       const { data } = await find('categories', { populate: '*' });
@@ -9,7 +22,7 @@ export const useStrapi = () => {
 
     getProducts: async () => {
       const { data } = await find('products', { populate: 'Image' });
-      return data;
+      return shuffle(data);
     },
 
     getFeatured: async () => {
@@ -21,7 +34,7 @@ export const useStrapi = () => {
           },
         },
       });
-      return data;
+      return shuffle(data);
     },
   };
 };
