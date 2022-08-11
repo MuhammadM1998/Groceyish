@@ -1,11 +1,11 @@
 <script setup>
-defineProps({
-  category: {
-    type: Object,
-    required: false,
-    default: () => {},
-  },
-});
+  defineProps({
+    category: {
+      type: Object,
+      required: false,
+      default: () => {},
+    },
+  });
 </script>
 
 <template>
@@ -20,19 +20,19 @@ defineProps({
 
     <span class="text-sm text-gray-200">
       {{ category.attributes.Products.data.length }}
-      {{ `${category.attributes.Products.data.length > 1 ? "Items" : "Item"}` }}
+      {{ `${category.attributes.Products.data.length > 1 ? 'Items' : 'Item'}` }}
     </span>
   </NuxtLink>
 </template>
 
 <style scoped lang="scss">
-.category-card {
-  @apply rounded-lg border border-gray-100 transition-colors hover:border-green-200;
-  @apply px-6 py-4;
-  @apply flex h-full flex-col items-center justify-center gap-2;
-}
+  .category-card {
+    @apply rounded-lg border border-gray-100 transition-colors hover:border-green-200;
+    @apply px-6 py-4;
+    @apply flex h-full flex-col items-center justify-center gap-2;
+  }
 
-.category-img {
-  @apply mx-auto h-[96px] w-[96px] rounded-full;
-}
+  .category-img {
+    @apply mx-auto h-[96px] w-[96px] rounded-full;
+  }
 </style>
