@@ -24,6 +24,10 @@
       @apply flex w-fit items-center justify-center  p-2;
       @apply rounded-full bg-gray-100 transition-colors  hover:bg-green-200 hover:text-white;
 
+      &.swiper-button-lock {
+        @apply hidden;
+      }
+
       span {
         @apply text-xl;
       }

@@ -47,6 +47,17 @@ module.exports = {
         'banner-3':
           "url('https://res.cloudinary.com/cloud-m98/image/upload/v1659276234/Groceyish/Banner-3.webp')",
       },
+
+      animation: {
+        progress: 'progress 3s ease-in-out',
+      },
+
+      keyframes: {
+        progress: {
+          '0%': { width: '0%' },
+          '100%': { transform: '100%' },
+        },
+      },
     },
   },
 

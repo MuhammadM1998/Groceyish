@@ -1,5 +1,5 @@
 export const useStrapi = () => {
-  const { find } = useStrapi4();
+  const { find, findOne } = useStrapi4();
 
   // An Array Shuffling function based on Fisher-Yates Algorithm
   const shuffle = (array) => {
@@ -43,6 +43,25 @@ export const useStrapi = () => {
         filters: {
           isDailyBestSell: {
             $eq: true,
+          },
+        },
+      });
+      return shuffle(data);
+    },
+
+    getProduct: async (productID) => {
+      const { data } = await findOne('products', productID, {
+        populate: '*',
+      });
+      return data;
+    },
+
+    getRelatedProducts: async (categoryID) => {
+      const { data } = await find('products', {
+        populate: '*',
+        filters: {
+          Category: {
+            Name: { $eq: categoryID },
           },
         },
       });
