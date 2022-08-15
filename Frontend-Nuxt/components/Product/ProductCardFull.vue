@@ -98,7 +98,7 @@
           </div>
         </div>
 
-        <button class="buy-button">
+        <button class="app-button buy-button">
           <span i-bx-cart-add></span>
           <p>Add to Cart</p>
         </button>
@@ -160,7 +160,7 @@
     }
 
     &-button {
-      @apply app-button w-full justify-center bg-green-100 text-green-200 transition-colors hover:bg-green-200 hover:text-white;
+      @apply w-full justify-center bg-green-100 text-green-200 transition-colors hover:bg-green-200 hover:text-white;
     }
   }
 

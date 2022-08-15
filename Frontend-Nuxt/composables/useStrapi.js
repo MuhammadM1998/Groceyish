@@ -67,5 +67,17 @@ export const useStrapi = () => {
       });
       return shuffle(data);
     },
+
+    getCategory: async (categoryID) => {
+      const { data } = await findOne('categories', categoryID, {
+        populate: {
+          Image: '*',
+          Products: {
+            populate: '*',
+          },
+        },
+      });
+      return data;
+    },
   };
 };

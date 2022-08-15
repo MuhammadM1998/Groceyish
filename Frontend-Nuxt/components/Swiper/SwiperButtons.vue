@@ -10,6 +10,8 @@
       <span block i-bx-left-arrow-alt></span>
     </button>
 
+    <slot />
+
     <button :class="`${name}-swiper-next`">
       <span block i-bx-right-arrow-alt></span>
     </button>
@@ -18,7 +20,7 @@
 
 <style scoped lang="scss">
   .swiper-controls {
-    @apply flex  gap-2;
+    @apply flex  items-center gap-2;
 
     button {
       @apply flex w-fit items-center justify-center  p-2;
