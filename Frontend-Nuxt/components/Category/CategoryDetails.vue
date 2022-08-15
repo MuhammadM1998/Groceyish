@@ -10,7 +10,6 @@
     Object.assign(categoryDetails, data);
     isLoading.value = false;
     productsList.value = categoryDetails.attributes.Products.data;
-    console.log(productsList);
   };
 
   onMounted(() => {
@@ -124,14 +123,15 @@
 <template>
   <section class="app-section flex flex-col gap-4">
     <CategoryBanner
-      v-if="categoryDetails.attributes"
+      v-if="!isLoading"
       :category-name="categoryDetails.attributes.Name"
       :category-img-url="categoryDetails.attributes.Image.data.attributes.url"
     />
+    <div v-else class="h-12 w-full animate-pulse rounded-full bg-gray-100" />
 
-    <div v-if="categoryDetails.attributes" class="category-products">
+    <div class="category-products">
       <!-- Summary -->
-      <div class="summary">
+      <div v-if="!isLoading" class="summary">
         <!-- Results Count -->
         <p class="text-gray-200">
           Found
@@ -163,7 +163,13 @@
         </div>
       </div>
 
-      <div class="products-grid">
+      <div v-else class="summary">
+        <div class="h-8 w-80 animate-pulse rounded-full bg-gray-100" />
+        <div class="h-8 w-80 animate-pulse rounded-full bg-gray-100" />
+      </div>
+
+      <!-- Results -->
+      <div v-if="!isLoading" class="products-grid">
         <ProductCard
           v-for="product in productsList.slice(startIndex, endIndex)"
           :key="product.id"
@@ -187,6 +193,10 @@
             <span block i-bx-right-arrow-alt></span>
           </button>
         </div>
+      </div>
+
+      <div v-else class="products-grid">
+        <ProductSkeleton v-for="index in resultsPerPage" :key="index" />
       </div>
     </div>
   </section>
