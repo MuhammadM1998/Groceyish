@@ -67,8 +67,17 @@
           <div class="cart-summary">
             <h3>Cart Summary</h3>
 
-            <div class="flex flex-col gap-2">
-              <div class="summary-row"></div>
+            <div class="mt-2 flex flex-col gap-2">
+              <form class="flex gap-2">
+                <div class="input-container">
+                  <span i-bxs-coupon></span>
+                  <input id="coupon" type="text" placeholder="Enter Coupon" />
+                </div>
+
+                <button class="app-button mx-auto w-fit" @click.prevent="">
+                  Apply
+                </button>
+              </form>
 
               <div class="summary-row">
                 <p class="font-medium">Subtotal</p>
@@ -146,5 +155,17 @@
 
   .summary-row {
     @apply flex items-center justify-between gap-2;
+  }
+
+  .input-container {
+    @apply relative overflow-hidden rounded-lg border border-green-200;
+
+    span {
+      @apply absolute top-1/2 left-2 -translate-y-1/2 text-gray-200;
+    }
+
+    input {
+      @apply w-full py-2 pl-8 pr-4 text-sm font-medium outline-none placeholder:font-normal placeholder:text-gray-200;
+    }
   }
 </style>

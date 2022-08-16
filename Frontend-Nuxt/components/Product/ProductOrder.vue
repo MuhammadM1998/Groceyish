@@ -31,7 +31,7 @@
     </div>
     <div class="product-details">
       <p class="brand">{{ productData.brand }}</p>
-      <p class="name">{{ productData.name }}</p>
+      <p class="app-text-lg">{{ productData.name }}</p>
       <p class="status" :class="`status--${productData.status}`">
         {{ capitalize(productData.status) }}
       </p>
@@ -61,10 +61,6 @@
 
       .brand {
         @apply text-sm font-medium text-gray-200;
-      }
-
-      .name {
-        @apply app-text-lg;
       }
 
       .status {
