@@ -17,7 +17,6 @@
         },
       },
     },
-
     {
       id: 18,
       status: 'canceled',
@@ -40,22 +39,44 @@
 
 <template>
   <section class="app-section">
-    <div class="wrapper">
-      <h2>Orders</h2>
+    <template v-if="testData.length">
+      <div class="wrapper">
+        <h2>Orders</h2>
 
-      <div class="flex flex-col gap-3">
-        <ProductOrder
-          v-for="product in testData"
-          :key="product.id"
-          :product="product"
-        />
+        <div class="flex flex-col gap-3">
+          <ProductOrder
+            v-for="product in testData"
+            :key="product.id"
+            :product="product"
+          />
+        </div>
+
+        <NuxtLink to="/" class="app-button w-fit">
+          <span i-bx-cart></span>
+          <p>Continue Shopping</p>
+        </NuxtLink>
       </div>
+    </template>
 
-      <NuxtLink to="/" class="app-button w-fit">
-        <span i-bx-cart></span>
-        <p>Continue Shopping</p>
-      </NuxtLink>
-    </div>
+    <template v-else>
+      <div class="wrapper items-center text-center">
+        <img
+          src="~/assets/icons/Orders-Empty.svg"
+          alt="Orders Empty Illustration"
+          class="lg:h-[350px] lg:w-[500px]"
+        />
+
+        <h2>You have no orders yet</h2>
+
+        <p class="font-medium text-gray-200">
+          Explore the products and discover the best deals!
+        </p>
+
+        <NuxtLink to="/" class="app-button mx-auto w-fit bg-blue-200">
+          Start Shopping
+        </NuxtLink>
+      </div>
+    </template>
   </section>
 </template>
 
