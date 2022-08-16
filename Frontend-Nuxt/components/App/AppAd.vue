@@ -5,7 +5,7 @@
 
     <form>
       <div class="input-container">
-        <span block i-carbon-email></span>
+        <span i-carbon-email></span>
         <input id="email" type="email" placeholder="Email address" />
       </div>
 
