@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <main>
     <SectionMyAccount />
     <SectionFeatured />
     <SectionPerks />
-  </div>
+  </main>
 </template>

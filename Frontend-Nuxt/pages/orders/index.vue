@@ -1,8 +1,6 @@
 <template>
   <main>
-    <CategoryDetails />
-    <SectionBanners />
-    <SectionCategories />
+    <SectionOrders />
     <SectionFeatured />
     <SectionPerks />
   </main>

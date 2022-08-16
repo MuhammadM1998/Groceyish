@@ -7,10 +7,10 @@
 </script>
 
 <template>
-  <div class="container">
+  <main>
     <ProductDetails @category-id-change="updateCategoryID" />
     <SectionRelatedProducts :category-id="categoryID" />
     <SectionCategories />
     <SectionPerks />
-  </div>
+  </main>
 </template>

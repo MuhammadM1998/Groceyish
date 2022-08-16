@@ -121,88 +121,96 @@
 </script>
 
 <template>
-  <section class="app-section flex flex-col gap-4">
-    <CategoryBanner
-      v-if="!isLoading"
-      :category-name="categoryDetails.attributes.Name"
-      :category-img-url="categoryDetails.attributes.Image.data.attributes.url"
-    />
-    <div v-else class="h-12 w-full animate-pulse rounded-full bg-gray-100" />
+  <section class="app-section">
+    <div class="wrapper">
+      <CategoryBanner
+        v-if="!isLoading"
+        :category-name="categoryDetails.attributes.Name"
+        :category-img-url="categoryDetails.attributes.Image.data.attributes.url"
+      />
+      <div v-else class="h-12 w-full animate-pulse rounded-full bg-gray-100" />
 
-    <div class="category-products">
-      <!-- Summary -->
-      <div v-if="!isLoading" class="summary">
-        <!-- Results Count -->
-        <p class="text-gray-200">
-          Found
-          <span class="font-medium text-green-200">
-            {{ categoryDetails.attributes.Products.data.length }}
-          </span>
-          Items!
-        </p>
-
-        <!-- Controls -->
-        <div class="flex flex-col gap-2 2xs:flex-row">
-          <BaseDropdown
-            :values="showFilters"
-            class="basis-full"
-            @value-changed="updateResultsPerPage"
-          >
-            <template #icon> <span i-carbon-show-data-cards></span> </template>
-            <template #caption> Show: </template>
-          </BaseDropdown>
-
-          <BaseDropdown
-            :values="sortFilters"
-            class="basis-full"
-            @value-changed="sortResults"
-          >
-            <template #icon> <span i-bx-sort></span> </template>
-            <template #caption> Sort: </template>
-          </BaseDropdown>
-        </div>
-      </div>
-
-      <div v-else class="summary">
-        <div class="h-8 w-80 animate-pulse rounded-full bg-gray-100" />
-        <div class="h-8 w-80 animate-pulse rounded-full bg-gray-100" />
-      </div>
-
-      <!-- Results -->
-      <div v-if="!isLoading" class="products-grid">
-        <ProductCard
-          v-for="product in productsList.slice(startIndex, endIndex)"
-          :key="product.id"
-          :product="product"
-        />
-
-        <!-- Pagination -->
-        <div class="pagination-controls">
-          <button v-if="previousPage" @click="currentPage--">
-            <span block i-bx-left-arrow-alt></span>
-          </button>
-
+      <div class="category-products">
+        <!-- Summary -->
+        <div v-if="!isLoading" class="summary">
+          <!-- Results Count -->
           <p class="text-gray-200">
-            Page
-            <span>{{ currentPage }}</span>
-            of
-            <span>{{ numberOfPages }}</span>
+            Found
+            <span class="font-medium text-green-200">
+              {{ categoryDetails.attributes.Products.data.length }}
+            </span>
+            Items!
           </p>
 
-          <button v-if="nextPage <= numberOfPages" @click="currentPage++">
-            <span block i-bx-right-arrow-alt></span>
-          </button>
-        </div>
-      </div>
+          <!-- Controls -->
+          <div class="flex flex-col gap-2 2xs:flex-row">
+            <BaseDropdown
+              :values="showFilters"
+              class="basis-full"
+              @value-changed="updateResultsPerPage"
+            >
+              <template #icon>
+                <span i-carbon-show-data-cards></span>
+              </template>
+              <template #caption> Show: </template>
+            </BaseDropdown>
 
-      <div v-else class="products-grid">
-        <ProductSkeleton v-for="index in resultsPerPage" :key="index" />
+            <BaseDropdown
+              :values="sortFilters"
+              class="basis-full"
+              @value-changed="sortResults"
+            >
+              <template #icon> <span i-bx-sort></span> </template>
+              <template #caption> Sort: </template>
+            </BaseDropdown>
+          </div>
+        </div>
+
+        <div v-else class="summary">
+          <div class="h-8 w-80 animate-pulse rounded-full bg-gray-100" />
+          <div class="h-8 w-80 animate-pulse rounded-full bg-gray-100" />
+        </div>
+
+        <!-- Results -->
+        <div v-if="!isLoading" class="products-grid">
+          <ProductCard
+            v-for="product in productsList.slice(startIndex, endIndex)"
+            :key="product.id"
+            :product="product"
+          />
+
+          <!-- Pagination -->
+          <div class="pagination-controls">
+            <button v-if="previousPage" @click="currentPage--">
+              <span block i-bx-left-arrow-alt></span>
+            </button>
+
+            <p class="text-gray-200">
+              Page
+              <span>{{ currentPage }}</span>
+              of
+              <span>{{ numberOfPages }}</span>
+            </p>
+
+            <button v-if="nextPage <= numberOfPages" @click="currentPage++">
+              <span block i-bx-right-arrow-alt></span>
+            </button>
+          </div>
+        </div>
+
+        <div v-else class="products-grid">
+          <ProductSkeleton v-for="index in resultsPerPage" :key="index" />
+        </div>
       </div>
     </div>
   </section>
 </template>
 
 <style scoped lang="scss">
+  .wrapper {
+    @apply container flex flex-col gap-4;
+  }
+
   .category-products {
     @apply flex flex-col gap-4;
   }

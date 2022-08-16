@@ -30,72 +30,80 @@
 </script>
 
 <template>
-  <section class="app-section grid grid-cols-1 gap-8 lg:grid-cols-4 lg:gap-20">
-    <!-- Product Details -->
-    <div class="flex flex-col gap-4 lg:col-span-3 lg:flex-row">
-      <!-- Product Images -->
-      <ClientOnly>
-        <Swiper
-          v-if="!isLoading"
-          :swiper-options="swiperOptions"
-          class="product-image-swiper"
-        >
-          <SwiperSlide
-            v-for="image in productDetails.attributes.Image.data"
-            :key="image.id"
+  <section class="app-section">
+    <div class="wrapper">
+      <!-- Product Details -->
+      <div class="flex flex-col gap-4 lg:col-span-3 lg:flex-row">
+        <!-- Product Images -->
+        <ClientOnly>
+          <Swiper
+            v-if="!isLoading"
+            :swiper-options="swiperOptions"
+            class="product-image-swiper"
           >
-            <img :src="image.attributes.url" alt="" />
-          </SwiperSlide>
-        </Swiper>
+            <SwiperSlide
+              v-for="image in productDetails.attributes.Image.data"
+              :key="image.id"
+            >
+              <img :src="image.attributes.url" alt="" />
+            </SwiperSlide>
+          </Swiper>
 
-        <div v-else class="h-80 w-80 animate-pulse rounded-full bg-gray-100" />
+          <div
+            v-else
+            class="h-80 w-80 animate-pulse rounded-full bg-gray-100"
+          />
 
-        <template #fallback>
-          <div class="h-80 w-80 animate-pulse rounded-full bg-gray-100" />
-        </template>
-      </ClientOnly>
+          <template #fallback>
+            <div class="h-80 w-80 animate-pulse rounded-full bg-gray-100" />
+          </template>
+        </ClientOnly>
 
-      <!-- Product Info -->
-      <ProductCardFull
-        v-if="!isLoading"
-        :product="productDetails"
-        class="lg:basis-full"
-      />
+        <!-- Product Info -->
+        <ProductCardFull
+          v-if="!isLoading"
+          :product="productDetails"
+          class="lg:basis-full"
+        />
 
-      <div v-else class="flex grow flex-col gap-2">
-        <div class="h-6 w-1/3 animate-pulse rounded-full bg-gray-100"></div>
-        <div class="h-4 w-1/6 animate-pulse rounded-full bg-gray-100"></div>
-        <div class="h-7 w-3/4 animate-pulse rounded-full bg-gray-100"></div>
-        <div class="h-4 w-1/6 animate-pulse rounded-full bg-gray-100"></div>
-        <div class="h-7 w-1/2 animate-pulse rounded-full bg-gray-100"></div>
+        <div v-else class="flex grow flex-col gap-2">
+          <div class="h-6 w-1/3 animate-pulse rounded-full bg-gray-100"></div>
+          <div class="h-4 w-1/6 animate-pulse rounded-full bg-gray-100"></div>
+          <div class="h-7 w-3/4 animate-pulse rounded-full bg-gray-100"></div>
+          <div class="h-4 w-1/6 animate-pulse rounded-full bg-gray-100"></div>
+          <div class="h-7 w-1/2 animate-pulse rounded-full bg-gray-100"></div>
+        </div>
       </div>
+
+      <!-- Product Perks -->
+      <div class="product-perks">
+        <ul>
+          <li>
+            <span i-carbon-reset class="text-2xl"></span>
+            <p>Enjoy hassle free returns.</p>
+          </li>
+
+          <li>
+            <span i-carbon-number-2 class="text-2xl"></span>
+            <p>2 Years warranty.</p>
+          </li>
+
+          <li>
+            <span i-bxs-check-shield class="text-2xl"> </span>
+            <p>Guaranteed by <span>Groceyish</span>.</p>
+          </li>
+        </ul>
+      </div>
+
+      <AppCartTooltip :is-tooltip-activated="true" />
     </div>
-
-    <!-- Product Perks -->
-    <div class="product-perks">
-      <ul>
-        <li>
-          <span i-carbon-reset class="text-2xl"></span>
-          <p>Enjoy hassle free returns.</p>
-        </li>
-
-        <li>
-          <span i-carbon-number-2 class="text-2xl"></span>
-          <p>2 Years warranty.</p>
-        </li>
-
-        <li>
-          <span i-bxs-check-shield class="text-2xl"> </span>
-          <p>Guaranteed by <span>Groceyish</span>.</p>
-        </li>
-      </ul>
-    </div>
-
-    <AppCartTooltip :is-tooltip-activated="true" />
   </section>
 </template>
 
 <style lang="scss">
+  .wrapper {
+    @apply container grid grid-cols-1 gap-8 lg:grid-cols-4 lg:gap-20;
+  }
   .product-image-swiper {
     --swiper-theme-color: #237d64;
     --swiper-navigation-size: 16px;

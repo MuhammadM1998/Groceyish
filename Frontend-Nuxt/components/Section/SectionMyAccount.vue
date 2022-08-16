@@ -1,6 +1,6 @@
 <template>
   <section class="app-section">
-    <div class="container flex flex-col gap-4">
+    <div class="wrapper">
       <h2>My Account</h2>
 
       <div class="grid grid-cols-1 gap-2 lg:grid-cols-2">
@@ -72,6 +72,10 @@
 </template>
 
 <style scoped lang="scss">
+  .wrapper {
+    @apply container flex flex-col gap-4;
+  }
+
   .account-block {
     @apply divide-y-2 divide-green-100 self-start rounded-md border-2 border-green-100;
 
