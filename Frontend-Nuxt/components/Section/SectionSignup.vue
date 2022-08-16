@@ -2,17 +2,17 @@
   <section class="app-section">
     <div class="wrapper">
       <img
-        src="~/assets/icons/Shopping.svg"
+        src="~/assets/icons/Signup.svg"
         alt="Shopping Illustration"
         class="mx-auto lg:h-[350px] lg:w-[500px]"
       />
 
       <div>
-        <h2 class="mb-2">Login</h2>
+        <h2 class="mb-2">Signup</h2>
         <p>
-          Don't have an account?
-          <NuxtLink to="/user/signup" class="font-medium text-green-200">
-            Signup
+          Already have an account?
+          <NuxtLink to="/user/login" class="font-medium text-green-200">
+            Login
           </NuxtLink>
         </p>
       </div>
@@ -28,7 +28,7 @@
           <input id="password" type="password" placeholder="Password" />
         </div>
 
-        <button class="app-button mx-auto w-fit">Login</button>
+        <button class="app-button mx-auto w-fit">Sign Up</button>
       </form>
 
       <div class="flex items-center gap-2">
