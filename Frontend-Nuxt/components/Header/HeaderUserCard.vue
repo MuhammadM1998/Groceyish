@@ -13,7 +13,7 @@
     <div class="flex items-center gap-2">
       <img src="https://picsum.photos/200" alt="User Image" />
       <p class="line-clamp-1">Muhammad Mahmoud</p>
-      <button class="hidden lg:block" @click="toggleUserMenu">
+      <button class="hidden outline-none lg:block" @click="toggleUserMenu">
         <span i-bx-chevron-down class="hidden lg:block"></span>
       </button>
     </div>
