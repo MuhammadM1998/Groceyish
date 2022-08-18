@@ -1,0 +1,17 @@
+{
+  "kind": "collectionType",
+  "collectionName": "newsletter_users",
+  "info": {
+    "singularName": "newsletter-user",
+    "pluralName": "newsletter-users",
+    "displayName": "Newsletter Users"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "user": {
+      "type": "email"
+    }
+  }
+}

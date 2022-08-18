@@ -18,12 +18,13 @@
   },
   "dependencies": {
     "@strapi/plugin-users-permissions": "4.3.4",
+    "@strapi/provider-email-nodemailer": "^4.3.4",
     "@strapi/provider-upload-cloudinary": "4.3.4",
     "@strapi/strapi": "4.3.4",
     "@strapi/utils": "4.3.4",
     "pg": "8.6.0",
     "pg-connection-string": "^2.5.0",
-    "strapi-provider-email-sendinblue": "^4.0.0"
+    "strapi-plugin-email-designer": "^2.1.1"
   },
   "strapi": {
     "uuid": "5eb81412-0e43-4ca9-9c42-219d4d67ed92"
