@@ -1,7 +1,7 @@
 module.exports = {
   routes: [
     {
-      method: 'GET',
+      method: 'POST',
       path: '/newsletter',
       handler: 'newsletter.sendEmail',
     },
