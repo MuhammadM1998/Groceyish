@@ -1,5 +1,7 @@
 export const useStrapi = () => {
   const { find, findOne } = useStrapi4();
+  const client = useStrapiClient();
+  const config = useRuntimeConfig();
 
   // An Array Shuffling function based on Fisher-Yates Algorithm
   const shuffle = (array) => {
@@ -78,6 +80,54 @@ export const useStrapi = () => {
         },
       });
       return data;
+    },
+
+    isNewSubscriber: async (userEmail) => {
+      const { data } = await client('/newsletter-users', {
+        method: 'GET',
+        headers: {
+          Authorization: config.strapiNewsletterToken,
+        },
+        params: {
+          filters: {
+            user: {
+              $eqi: userEmail,
+            },
+          },
+        },
+      });
+
+      return data.length ? false : true;
+    },
+
+    addNewsletterSubscriber: async (userEmail) => {
+      const response = client('/newsletter-users', {
+        method: 'POST',
+        headers: {
+          Authorization: config.strapiNewsletterToken,
+        },
+        body: {
+          data: {
+            user: userEmail,
+          },
+        },
+      });
+
+      return response;
+    },
+
+    sendNewsletterEmail: async (userEmail, status) => {
+      const response = client('/newsletter', {
+        method: 'POST',
+        headers: {
+          Authorization: config.strapiNewsletterToken,
+        },
+        params: {
+          email: userEmail,
+          isNewSubscription: status,
+        },
+      });
+      return response;
     },
   };
 };
