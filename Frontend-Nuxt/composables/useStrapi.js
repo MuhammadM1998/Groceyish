@@ -58,10 +58,11 @@ export const useStrapi = () => {
       return data;
     },
 
-    getRelatedProducts: async (categoryID) => {
+    getRelatedProducts: async (productID, categoryID) => {
       const { data } = await find('products', {
         populate: '*',
         filters: {
+          id: { $ne: productID },
           Category: {
             Name: { $eq: categoryID },
           },

@@ -38,8 +38,10 @@
 
   const getRelatedProducts = async (categoryID) => {
     isLoading.value = true;
-    const data = await useStrapi().getRelatedProducts(categoryID);
+    const productID = useRoute().params.id;
+    const data = await useStrapi().getRelatedProducts(productID, categoryID);
     Object.assign(related, data);
+    console.log(related);
     isLoading.value = false;
   };
 </script>
