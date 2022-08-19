@@ -108,6 +108,12 @@
     --swiper-theme-color: #237d64;
     --swiper-navigation-size: 16px;
 
+    @apply flex items-center;
+
+    .swiper-wrapper {
+      @apply max-h-[400px];
+    }
+
     .swiper-button-next,
     .swiper-button-prev {
       @apply flex items-center justify-center rounded-full p-5 transition-colors;
@@ -120,10 +126,9 @@
 
     .swiper-slide {
       @apply flex items-center px-16;
-    }
-
-    img {
-      @apply mx-auto;
+      img {
+        @apply mx-auto max-h-full;
+      }
     }
   }
 
