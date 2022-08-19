@@ -3,8 +3,6 @@
 
   const toggleUserMenu = () => {
     isUserMenuVisible.value = !isUserMenuVisible.value;
-    console.log('whateber');
-    console.log(isUserMenuVisible.value);
   };
 </script>
 
