@@ -1,20 +1,35 @@
 <script setup>
+  // Route Query Params
+  const route = useRoute();
+  watch(
+    () => route.query,
+    () => getProducts()
+  );
+  const heading = ref('All Products');
+
   // Strapi
   const isLoading = ref(true);
-  const categoryDetails = reactive({});
   const productsList = ref([]);
 
-  const getCategory = async (categoryID) => {
+  const getProducts = async () => {
     isLoading.value = true;
-    const data = await useStrapi().getCategory(categoryID);
-    Object.assign(categoryDetails, data);
-    isLoading.value = false;
-    productsList.value = categoryDetails.attributes.Products.data;
-  };
+    let data;
+    if (route.query.featured) {
+      data = await useStrapi().getFeatured();
+      heading.value = 'Featured Products';
+    } else if (route.query.dailyBestSells) {
+      data = await useStrapi().getDailyBestSells();
+      heading.value = 'Daily Best Sells';
+    } else {
+      data = await useStrapi().getProducts();
+      heading.value = 'All Products';
+    }
+    productsList.value = data;
 
+    isLoading.value = false;
+  };
   onMounted(() => {
-    const categoryID = useRoute().params.id; // Getting the Category ID from the url
-    getCategory(categoryID);
+    getProducts();
   });
 
   // Pagination
@@ -123,21 +138,17 @@
 <template>
   <section class="app-section">
     <div class="wrapper">
-      <CategoryBanner
-        v-if="!isLoading"
-        :category-name="categoryDetails.attributes.Name"
-        :category-img-url="categoryDetails.attributes.Image.data.attributes.url"
-      />
-      <div v-else class="h-12 w-full animate-pulse rounded-full bg-gray-100" />
+      <h2 v-if="!isLoading">{{ heading }}</h2>
+      <div v-else class="h-8 w-96 animate-pulse rounded-full bg-gray-100" />
 
-      <div class="category-products">
+      <div class="products">
         <!-- Summary -->
         <div v-if="!isLoading" class="summary">
           <!-- Results Count -->
           <p class="text-gray-200">
             Found
             <span class="font-medium text-green-200">
-              {{ categoryDetails.attributes.Products.data.length }}
+              {{ productsCount }}
             </span>
             Items!
           </p>
@@ -165,7 +176,6 @@
             </BaseDropdown>
           </div>
         </div>
-
         <div v-else class="summary">
           <div class="h-8 w-80 animate-pulse rounded-full bg-gray-100" />
           <div class="h-8 w-80 animate-pulse rounded-full bg-gray-100" />
@@ -197,7 +207,6 @@
             </button>
           </div>
         </div>
-
         <div v-else class="products-grid">
           <ProductSkeleton v-for="index in resultsPerPage" :key="index" />
         </div>
@@ -211,13 +220,14 @@
     @apply container flex flex-col gap-4;
   }
 
-  .category-products {
+  .products {
     @apply flex flex-col gap-4;
   }
 
   .summary {
     @apply flex flex-col gap-2 lg:flex-row lg:items-center lg:justify-between;
   }
+
   .products-grid {
     @apply grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5;
 

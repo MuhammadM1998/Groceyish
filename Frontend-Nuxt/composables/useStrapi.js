@@ -23,7 +23,7 @@ export const useStrapi = () => {
     },
 
     getProducts: async () => {
-      const { data } = await find('products', { populate: 'Image' });
+      const { data } = await find('products', { populate: '*' });
       return shuffle(data);
     },
 
