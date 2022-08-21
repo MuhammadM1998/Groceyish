@@ -1,13 +1,26 @@
+<script setup>
+  const cartStore = useCartStore();
+  const cartproductsNumber = computed(() => cartStore.productsNumber);
+  const cartTotalPrice = computed(() => cartStore.totalPrice);
+  onMounted(() => {
+    cartStore.loadLocalStorage();
+  });
+</script>
+
 <template>
   <NuxtLink to="/cart" class="cart">
     <div class="relative">
       <span i-bx-cart class="text-4xl"></span>
-      <span class="cart-items">2</span>
+      <span v-if="cartproductsNumber" class="cart-items">
+        {{ cartproductsNumber }}
+      </span>
     </div>
 
     <div class="text-start">
       <p>Cart</p>
-      <span class="cart-price">21 EGP</span>
+      <span v-if="cartTotalPrice" class="cart-price">
+        {{ cartTotalPrice }} EGP
+      </span>
     </div>
   </NuxtLink>
 </template>

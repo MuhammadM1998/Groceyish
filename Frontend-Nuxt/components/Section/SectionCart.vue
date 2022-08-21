@@ -1,63 +1,33 @@
 <script setup>
-  const testData = [
-    {
-      id: 11,
-      attributes: {
-        Name: 'Creamy Fig Jam - 430g',
-        Brand: 'Vitrac',
-        Price_Current: 18,
-        Price_Original: 30,
-        Price_Currency: 'EGP',
-        Image: {
-          data: [
-            {
-              attributes: {
-                url: 'https://res.cloudinary.com/cloud-m98/image/upload/v1659117713/Groceyish/Strapi/71_MO_l_O_Brw_L_AC_SL_1500_bbb4330a0d_9c23e83ed7.webp',
-              },
-            },
-          ],
-        },
-      },
-    },
+  // Store
+  const cartStore = useCartStore();
+  const productsList = ref([]);
+  const cartTotalPrice = computed(() => cartStore.totalPrice);
+  onMounted(() => loadProductsFromStore());
 
-    {
-      id: 18,
-      attributes: {
-        Name: 'Fine Black Tea - 40 g',
-        Brand: 'Blue Tea Pot',
-        Price_Current: 3.5,
-        Price_Original: 6,
-        Price_Currency: 'EGP',
-        Image: {
-          data: [
-            {
-              attributes: {
-                url: 'https://res.cloudinary.com/cloud-m98/image/upload/v1659117698/Groceyish/Strapi/1_9d1185f77b_69906d51bf.webp',
-              },
-            },
-          ],
-        },
-      },
-    },
-  ];
+  const loadProductsFromStore = () =>
+    (productsList.value = cartStore.productsList);
 
-  // Modal
+  // Coupon Modal
   const isModalVisible = ref(false);
+
+  // Checkout
+  const checkout = () => {};
 </script>
 
 <template>
   <section class="app-section">
-    <template v-if="testData.length">
+    <template v-if="productsList.length">
       <div class="wrapper">
-        <h2>Cart ({{ testData.length }})</h2>
+        <h2>Cart ({{ productsList.length }})</h2>
 
         <div class="cart">
           <div class="cart-items">
             <div class="flex flex-col gap-3">
               <ProductCart
-                v-for="product in testData"
+                v-for="(product, index) in productsList"
                 :key="product.id"
-                :product="product"
+                v-model:product="productsList[index]"
               />
             </div>
 
@@ -96,7 +66,9 @@
 
               <div class="summary-row">
                 <p class="font-medium">Subtotal</p>
-                <p class="app-text-lg text-green-200">28.5 EGP</p>
+                <p class="app-text-lg text-green-200">
+                  {{ cartTotalPrice }} EGP
+                </p>
               </div>
 
               <div class="summary-row">
@@ -106,7 +78,7 @@
 
               <div class="summary-row">
                 <p class="font-medium">Coupon</p>
-                <p class="app-text-lg text-green-200">-8.5 EGP</p>
+                <p class="app-text-lg text-green-200">- 0 EGP</p>
               </div>
 
               <hr class="border-2 border-green-100" />
@@ -116,10 +88,15 @@
                   Total
                   <span class="text-sm text-gray-200"> (including VAT) </span>
                 </p>
-                <p class="text-2xl font-semibold text-green-200">20 EGP</p>
+                <p class="text-2xl font-semibold text-green-200">
+                  {{ cartTotalPrice }} EGP
+                </p>
               </div>
 
-              <button class="app-button justify-center">
+              <button
+                class="app-button justify-center"
+                @click.prevent="checkout"
+              >
                 <span i-bx-cart-alt />
                 <p>Checkout</p>
               </button>

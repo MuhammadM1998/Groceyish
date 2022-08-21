@@ -99,6 +99,12 @@ export default defineNuxtConfig({
     '@nuxtjs/strapi',
   ],
 
+  autoImports: {
+    dirs: [
+      './stores', // Pinia Stores Autoimport
+    ],
+  },
+
   unocss: {
     uno: false, // Disable the enabled-by-default preset to prevent conflicts with tailwind
     icons: {

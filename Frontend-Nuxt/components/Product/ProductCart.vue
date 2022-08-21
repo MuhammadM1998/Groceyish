@@ -6,7 +6,6 @@
       default: () => {},
     },
   });
-
   const productData = {
     id: props.product.id,
     name: props.product.attributes.Name,
@@ -32,9 +31,17 @@
         : 'https://res.cloudinary.com/cloud-m98/image/upload/v1659123319/Groceyish/Image_Placeholder.webp';
     },
   };
+  const emit = defineEmits(['update:product']);
 
-  // Quantity
-  const quantity = ref(1);
+  // Store
+  const cartStore = useCartStore();
+  const removeProduct = () => {
+    cartStore.removeProduct(props.product);
+  };
+  const updateProductQuantity = (newQuantity) => {
+    const updatedProduct = { ...props.product, quantity: newQuantity };
+    emit('update:product', updatedProduct);
+  };
 </script>
 
 <template>
@@ -60,24 +67,27 @@
       <form class="flex items-center justify-between gap-4">
         <!-- Quantity -->
         <div class="quantity">
-          <input :value="quantity" readonly />
+          <input :value="product.quantity" readonly />
 
           <div class="quantity-controls">
-            <button class="quantity-controls-up" @click.prevent="quantity++">
+            <button
+              class="quantity-controls-up"
+              @click.prevent="updateProductQuantity(product.quantity + 1)"
+            >
               <span i-bx-chevron-up></span>
             </button>
 
             <button
-              :disabled="quantity <= 1"
+              :disabled="product.quantity <= 1"
               class="quantity-controls-down"
-              @click.prevent="quantity--"
+              @click.prevent="updateProductQuantity(product.quantity - 1)"
             >
               <span i-bx-chevron-down></span>
             </button>
           </div>
         </div>
 
-        <button class="app-button controls">
+        <button class="app-button controls" @click.prevent="removeProduct">
           <span i-bx-trash></span>
           <p>Remove</p>
         </button>

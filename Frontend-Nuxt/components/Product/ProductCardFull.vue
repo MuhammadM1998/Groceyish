@@ -33,6 +33,12 @@
 
   // Quantity
   const quantity = ref(1);
+
+  // // Adding an item to Cart
+  const cart = useCartStore();
+  const addToCart = () => {
+    cart.addProduct(props.product, quantity.value);
+  };
 </script>
 
 <template>
@@ -98,7 +104,7 @@
           </div>
         </div>
 
-        <button class="app-button buy-button">
+        <button class="app-button buy-button" @click.prevent="addToCart">
           <span i-bx-cart-add></span>
           <p>Add to Cart</p>
         </button>
