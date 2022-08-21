@@ -40,6 +40,9 @@
       },
     },
   ];
+
+  // Modal
+  const isModalVisible = ref(false);
 </script>
 
 <template>
@@ -74,9 +77,21 @@
                   <input id="coupon" type="text" placeholder="Enter Coupon" />
                 </div>
 
-                <button class="app-button mx-auto w-fit" @click.prevent="">
+                <button
+                  class="app-button mx-auto w-fit"
+                  @click.prevent="isModalVisible = true"
+                >
                   Apply
                 </button>
+
+                <BaseModal v-model:is-modal-visible="isModalVisible">
+                  <p class="app-text-lg text-green-200">
+                    This feature is coming soon!
+                  </p>
+                  <p class="text-sm font-medium text-gray-200">
+                    We're working everyday to enhance your experience as client.
+                  </p>
+                </BaseModal>
               </form>
 
               <div class="summary-row">
