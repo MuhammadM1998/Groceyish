@@ -1,3 +1,7 @@
+<script setup>
+  useHead({ title: `Groceyish - Products` });
+</script>
+
 <template>
   <main>
     <ProductGallery />

@@ -27,74 +27,76 @@
       <img
         src="~/assets/icons/Signup.svg"
         alt="Shopping Illustration"
-        class="mx-auto lg:h-[350px] lg:w-[500px]"
+        class="mx-auto lg:h-[350px] lg:w-[500px] lg:basis-full"
       />
 
-      <div>
-        <h2 class="mb-2">Signup</h2>
-        <p>
-          Already have an account?
-          <NuxtLink to="/user/login" class="font-medium text-green-200">
-            Login
-          </NuxtLink>
-        </p>
-      </div>
-
-      <form class="flex flex-col gap-2">
-        <div class="input-container">
-          <span i-carbon-email></span>
-          <input
-            id="username"
-            v-model="username"
-            type="username"
-            placeholder="Username"
-          />
+      <div class="flex flex-col gap-4 lg:basis-full">
+        <div>
+          <h2 class="mb-2">Signup</h2>
+          <p>
+            Already have an account?
+            <NuxtLink to="/user/login" class="font-medium text-green-200">
+              Login
+            </NuxtLink>
+          </p>
         </div>
 
-        <div class="input-container">
-          <span i-carbon-email></span>
-          <input
-            id="email"
-            v-model="email"
-            type="email"
-            placeholder="Email address"
-          />
+        <form class="flex flex-col gap-2">
+          <div class="input-container">
+            <span i-carbon-email></span>
+            <input
+              id="username"
+              v-model="username"
+              type="username"
+              placeholder="Username"
+            />
+          </div>
+
+          <div class="input-container">
+            <span i-carbon-email></span>
+            <input
+              id="email"
+              v-model="email"
+              type="email"
+              placeholder="Email address"
+            />
+          </div>
+
+          <div class="input-container">
+            <span i-bx-lock-alt></span>
+            <input
+              id="password"
+              v-model="password"
+              type="password"
+              placeholder="Password"
+            />
+          </div>
+
+          <button
+            class="app-button mx-auto w-fit"
+            @click.prevent="emailPasswordSignup"
+          >
+            Sign Up
+          </button>
+        </form>
+
+        <div class="flex items-center gap-2">
+          <div class="h-0.5 grow bg-gray-200" />
+          <p class="font-medium">Or continue with</p>
+          <div class="h-0.5 grow bg-gray-200" />
         </div>
 
-        <div class="input-container">
-          <span i-bx-lock-alt></span>
-          <input
-            id="password"
-            v-model="password"
-            type="password"
-            placeholder="Password"
-          />
+        <div class="flex items-center justify-center gap-4">
+          <button class="rounded-full bg-green-200 p-2 text-white">
+            <span class="text-2xl" i-bxl-facebook />
+          </button>
+          <button class="rounded-full bg-green-200 p-2 text-white">
+            <span class="text-2xl" i-bxl-google />
+          </button>
+          <button class="rounded-full bg-green-200 p-2 text-white">
+            <span class="text-2xl" i-bxl-twitter />
+          </button>
         </div>
-
-        <button
-          class="app-button mx-auto w-fit"
-          @click.prevent="emailPasswordSignup"
-        >
-          Sign Up
-        </button>
-      </form>
-
-      <div class="flex items-center gap-2">
-        <div class="h-0.5 grow bg-gray-200" />
-        <p class="font-medium">Or continue with</p>
-        <div class="h-0.5 grow bg-gray-200" />
-      </div>
-
-      <div class="flex items-center justify-center gap-4">
-        <button class="rounded-full bg-green-200 p-2 text-white">
-          <span class="text-2xl" i-bxl-facebook />
-        </button>
-        <button class="rounded-full bg-green-200 p-2 text-white">
-          <span class="text-2xl" i-bxl-google />
-        </button>
-        <button class="rounded-full bg-green-200 p-2 text-white">
-          <span class="text-2xl" i-bxl-twitter />
-        </button>
       </div>
     </div>
   </section>
@@ -102,7 +104,7 @@
 
 <style scoped lang="scss">
   .wrapper {
-    @apply container flex flex-col gap-4;
+    @apply container flex flex-col gap-4 lg:flex-row-reverse lg:items-center;
   }
 
   .input-container {

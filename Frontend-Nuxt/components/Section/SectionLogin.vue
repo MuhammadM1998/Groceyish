@@ -27,87 +27,91 @@
       <img
         src="~/assets/icons/Shopping.svg"
         alt="Shopping Illustration"
-        class="mx-auto lg:h-[350px] lg:w-[500px]"
+        class="mx-auto lg:h-[350px] lg:w-[500px] lg:basis-full"
       />
 
-      <div>
-        <h2 class="mb-2">Login</h2>
-        <p>
-          Don't have an account?
-          <NuxtLink to="/user/signup" class="font-medium text-green-200">
-            Signup
-          </NuxtLink>
-        </p>
-      </div>
-
-      <form class="flex flex-col gap-2">
-        <div class="input-container">
-          <span i-carbon-email></span>
-          <input
-            id="email"
-            v-model="email"
-            type="email"
-            placeholder="Email address"
-          />
-        </div>
-
-        <div class="input-container">
-          <span i-bx-lock-alt></span>
-          <input
-            id="password"
-            v-model="password"
-            type="password"
-            placeholder="Password"
-          />
-        </div>
-
-        <p
-          class="error-message opacity-0"
-          :class="{ 'opacity-100': !emailPasswordValid }"
-        >
-          Invalid Email or password
-        </p>
-
-        <button
-          class="app-button mx-auto w-fit"
-          @click.prevent="emailPasswordLogin"
-        >
-          Login
-        </button>
-      </form>
-
-      <div class="flex items-center gap-2">
-        <div class="h-0.5 grow bg-gray-200" />
-        <p class="font-medium">Or continue with</p>
-        <div class="h-0.5 grow bg-gray-200" />
-      </div>
-
-      <div class="flex items-center justify-center gap-4">
-        <button
-          class="rounded-full bg-green-200 p-2 text-white"
-          @click="isModalVisible = true"
-        >
-          <span class="text-2xl" i-bxl-facebook />
-        </button>
-        <button
-          class="rounded-full bg-green-200 p-2 text-white"
-          @click="isModalVisible = true"
-        >
-          <span class="text-2xl" i-bxl-google />
-        </button>
-        <button
-          class="rounded-full bg-green-200 p-2 text-white"
-          @click="isModalVisible = true"
-        >
-          <span class="text-2xl" i-bxl-twitter />
-        </button>
-
-        <BaseModal v-model:is-modal-visible="isModalVisible">
-          <p class="app-text-lg text-green-200">This feature is coming soon!</p>
-          <p class="text-sm font-medium text-gray-200">
-            We're working everyday to enhance your experience as client.
+      <div class="flex flex-col gap-4 lg:basis-full">
+        <div>
+          <h2 class="mb-2">Login</h2>
+          <p>
+            Don't have an account?
+            <NuxtLink to="/user/signup" class="font-medium text-green-200">
+              Signup
+            </NuxtLink>
           </p>
-        </BaseModal>
+        </div>
+
+        <form class="flex flex-col gap-2">
+          <div class="input-container">
+            <span i-carbon-email></span>
+            <input
+              id="email"
+              v-model="email"
+              type="email"
+              placeholder="Email address"
+            />
+          </div>
+
+          <div class="input-container">
+            <span i-bx-lock-alt></span>
+            <input
+              id="password"
+              v-model="password"
+              type="password"
+              placeholder="Password"
+            />
+          </div>
+
+          <p
+            class="error-message opacity-0"
+            :class="{ 'opacity-100': !emailPasswordValid }"
+          >
+            Invalid Email or password
+          </p>
+
+          <button
+            class="app-button mx-auto w-fit"
+            @click.prevent="emailPasswordLogin"
+          >
+            Login
+          </button>
+        </form>
+
+        <div class="flex items-center gap-2">
+          <div class="h-0.5 grow bg-gray-200" />
+          <p class="font-medium">Or continue with</p>
+          <div class="h-0.5 grow bg-gray-200" />
+        </div>
+
+        <div class="flex items-center justify-center gap-4">
+          <button
+            class="rounded-full bg-green-200 p-2 text-white"
+            @click="isModalVisible = true"
+          >
+            <span class="text-2xl" i-bxl-facebook />
+          </button>
+          <button
+            class="rounded-full bg-green-200 p-2 text-white"
+            @click="isModalVisible = true"
+          >
+            <span class="text-2xl" i-bxl-google />
+          </button>
+          <button
+            class="rounded-full bg-green-200 p-2 text-white"
+            @click="isModalVisible = true"
+          >
+            <span class="text-2xl" i-bxl-twitter />
+          </button>
+
+          <BaseModal v-model:is-modal-visible="isModalVisible">
+            <p class="app-text-lg text-green-200">
+              This feature is coming soon!
+            </p>
+            <p class="text-sm font-medium text-gray-200">
+              We're working everyday to enhance your experience as client.
+            </p>
+          </BaseModal>
+        </div>
       </div>
     </div>
   </section>
@@ -115,7 +119,7 @@
 
 <style scoped lang="scss">
   .wrapper {
-    @apply container flex flex-col gap-4;
+    @apply container flex flex-col gap-4 lg:flex-row lg:items-center;
   }
 
   .input-container {
