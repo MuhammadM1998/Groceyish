@@ -1,3 +1,26 @@
+<script setup>
+  const router = useRouter();
+  const user = useStrapiUser();
+  if (user.value) router.push('/');
+
+  const { register } = useStrapiAuth();
+  const username = ref('');
+  const email = ref('');
+  const password = ref('');
+  const emailPasswordSignup = async () => {
+    try {
+      await register({
+        username: username.value,
+        email: email.value,
+        password: password.value,
+      });
+      router.push('/');
+    } catch (error) {
+      console.log(error);
+    }
+  };
+</script>
+
 <template>
   <section class="app-section">
     <div class="wrapper">
@@ -20,15 +43,40 @@
       <form class="flex flex-col gap-2">
         <div class="input-container">
           <span i-carbon-email></span>
-          <input id="email" type="email" placeholder="Email address" />
+          <input
+            id="username"
+            v-model="username"
+            type="username"
+            placeholder="Username"
+          />
+        </div>
+
+        <div class="input-container">
+          <span i-carbon-email></span>
+          <input
+            id="email"
+            v-model="email"
+            type="email"
+            placeholder="Email address"
+          />
         </div>
 
         <div class="input-container">
           <span i-bx-lock-alt></span>
-          <input id="password" type="password" placeholder="Password" />
+          <input
+            id="password"
+            v-model="password"
+            type="password"
+            placeholder="Password"
+          />
         </div>
 
-        <button class="app-button mx-auto w-fit">Sign Up</button>
+        <button
+          class="app-button mx-auto w-fit"
+          @click.prevent="emailPasswordSignup"
+        >
+          Sign Up
+        </button>
       </form>
 
       <div class="flex items-center gap-2">

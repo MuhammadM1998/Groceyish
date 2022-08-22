@@ -1,7 +1,8 @@
 <script setup>
-  defineProps({
-    isNavVisible: { type: Boolean, required: true },
-  });
+  const isNavVisible = inject('isNavVisible');
+  const closeMenu = () => {
+    isNavVisible.value = false;
+  };
 </script>
 
 <template>
@@ -17,26 +18,42 @@
       <!-- Links Section -->
       <section class="nav-section">
         <div class="container">
-          <NuxtLink to="/categories" class="app-button w-fit">
+          <NuxtLink
+            to="/categories"
+            class="app-button w-fit"
+            @click="closeMenu"
+          >
             <span i-bx-grid-alt></span>
             Browse All Categories
           </NuxtLink>
 
           <ul>
             <li>
-              <NuxtLink to="/" class="nav-link nav-link--active">
+              <NuxtLink
+                to="/"
+                class="nav-link nav-link--active"
+                @click="closeMenu"
+              >
                 <span i-bx-home></span> Home
               </NuxtLink>
             </li>
 
             <li>
-              <NuxtLink to="/products?featured=true" class="nav-link">
+              <NuxtLink
+                to="/products?featured=true"
+                class="nav-link"
+                @click="closeMenu"
+              >
                 <span i-carbon-percentage></span> Featured
               </NuxtLink>
             </li>
 
             <li>
-              <NuxtLink to="/products?dailyBestSells=true" class="nav-link">
+              <NuxtLink
+                to="/products?dailyBestSells=true"
+                class="nav-link"
+                @click="closeMenu"
+              >
                 <span i-bxs-hot></span> Daily Best Deals
               </NuxtLink>
             </li>

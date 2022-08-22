@@ -2,7 +2,7 @@
 
 E-Commerce Website for selling groceries online.
 
-![Website Mockup](https://res.cloudinary.com/cloud-m98/image/upload/v1658067530/Groceyish/Website-Screenshot.webp)
+![Website Mockup](https://res.cloudinary.com/cloud-m98/image/upload/v1661170022/Groceyish/Website-Screenshot.png)
 
 ### 🔗 Links
 

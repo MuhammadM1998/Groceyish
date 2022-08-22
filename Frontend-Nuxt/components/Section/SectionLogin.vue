@@ -1,3 +1,26 @@
+<script setup>
+  const router = useRouter();
+  const user = useStrapiUser();
+  if (user.value) router.push('/');
+
+  const { login } = useStrapiAuth();
+  const email = ref('');
+  const password = ref('');
+  const emailPasswordValid = ref(true);
+  const emailPasswordLogin = async () => {
+    try {
+      emailPasswordValid.value = false;
+      await login({ identifier: email.value, password: password.value });
+      emailPasswordValid.value = true;
+      router.push('/');
+    } catch (error) {
+      emailPasswordValid.value = false;
+    }
+  };
+
+  const isModalVisible = ref(false);
+</script>
+
 <template>
   <section class="app-section">
     <div class="wrapper">
@@ -20,15 +43,37 @@
       <form class="flex flex-col gap-2">
         <div class="input-container">
           <span i-carbon-email></span>
-          <input id="email" type="email" placeholder="Email address" />
+          <input
+            id="email"
+            v-model="email"
+            type="email"
+            placeholder="Email address"
+          />
         </div>
 
         <div class="input-container">
           <span i-bx-lock-alt></span>
-          <input id="password" type="password" placeholder="Password" />
+          <input
+            id="password"
+            v-model="password"
+            type="password"
+            placeholder="Password"
+          />
         </div>
 
-        <button class="app-button mx-auto w-fit">Login</button>
+        <p
+          class="error-message opacity-0"
+          :class="{ 'opacity-100': !emailPasswordValid }"
+        >
+          Invalid Email or password
+        </p>
+
+        <button
+          class="app-button mx-auto w-fit"
+          @click.prevent="emailPasswordLogin"
+        >
+          Login
+        </button>
       </form>
 
       <div class="flex items-center gap-2">
@@ -38,15 +83,31 @@
       </div>
 
       <div class="flex items-center justify-center gap-4">
-        <button class="rounded-full bg-green-200 p-2 text-white">
+        <button
+          class="rounded-full bg-green-200 p-2 text-white"
+          @click="isModalVisible = true"
+        >
           <span class="text-2xl" i-bxl-facebook />
         </button>
-        <button class="rounded-full bg-green-200 p-2 text-white">
+        <button
+          class="rounded-full bg-green-200 p-2 text-white"
+          @click="isModalVisible = true"
+        >
           <span class="text-2xl" i-bxl-google />
         </button>
-        <button class="rounded-full bg-green-200 p-2 text-white">
+        <button
+          class="rounded-full bg-green-200 p-2 text-white"
+          @click="isModalVisible = true"
+        >
           <span class="text-2xl" i-bxl-twitter />
         </button>
+
+        <BaseModal v-model:is-modal-visible="isModalVisible">
+          <p class="app-text-lg text-green-200">This feature is coming soon!</p>
+          <p class="text-sm font-medium text-gray-200">
+            We're working everyday to enhance your experience as client.
+          </p>
+        </BaseModal>
       </div>
     </div>
   </section>
@@ -67,5 +128,9 @@
     input {
       @apply w-full py-2 pl-8 pr-4 text-sm font-medium outline-none placeholder:font-normal placeholder:text-gray-200;
     }
+  }
+
+  .error-message {
+    @apply text-sm font-medium text-red-700  transition-opacity;
   }
 </style>
