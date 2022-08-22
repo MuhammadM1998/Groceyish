@@ -9,6 +9,12 @@ E-Commerce Website for selling groceries online.
 - [Live Site](https://groceyish.vercel.app/)
 - [Source Repo](https://github.com/MuhammadM1998/Groceyish)
 
+### ☑️ To Do
+
+- Stripe Checkout
+- Dynamic User Orders
+- Cypress E2E Tests
+
 ### ‍💻 Stack
 
 ![Nuxtjs](https://img.shields.io/badge/Nuxt-002E3B?logo=nuxtdotjs&style=for-the-badge)
