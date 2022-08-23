@@ -9,9 +9,8 @@
   const emailPasswordValid = ref(true);
   const emailPasswordLogin = async () => {
     try {
-      emailPasswordValid.value = false;
-      await login({ identifier: email.value, password: password.value });
       emailPasswordValid.value = true;
+      await login({ identifier: email.value, password: password.value });
       router.push('/');
     } catch (error) {
       emailPasswordValid.value = false;

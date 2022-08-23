@@ -10,6 +10,13 @@
   const toggleUserMenu = () => {
     isUserMenuVisible.value = !isUserMenuVisible.value;
   };
+
+  // On Click Outside
+  const target = ref(null);
+  const menuButton = ref(null);
+  onClickOutside(target, () => (isUserMenuVisible.value = false), {
+    ignore: [menuButton],
+  });
 </script>
 
 <template>
@@ -27,12 +34,17 @@
       <div class="flex items-center gap-2">
         <img src="https://picsum.photos/200" alt="User Image" />
         <p class="line-clamp-1">{{ user.username }}</p>
-        <button class="hidden outline-none lg:block" @click="toggleUserMenu">
+        <button
+          ref="menuButton"
+          class="hidden outline-none transition-transform lg:block"
+          :class="{ 'rotate-180': isUserMenuVisible }"
+          @click="toggleUserMenu"
+        >
           <span i-bx-chevron-down class="hidden lg:block"></span>
         </button>
       </div>
 
-      <HeaderUserMenu :is-menu-visible="isUserMenuVisible" />
+      <HeaderUserMenu ref="target" :is-menu-visible="isUserMenuVisible" />
     </template>
   </div>
 </template>

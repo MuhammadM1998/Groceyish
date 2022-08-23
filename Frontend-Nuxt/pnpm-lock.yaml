@@ -14,6 +14,7 @@ specifiers:
   '@unocss/nuxt': ^0.45.5
   '@vitejs/plugin-vue': 2.3.3
   '@vitest/ui': ^0.21.0
+  '@vueuse/core': ^9.1.0
   '@vueuse/nuxt': ^9.1.0
   c8: ^7.12.0
   cypress: ^10.4.0
@@ -47,6 +48,7 @@ devDependencies:
   '@unocss/nuxt': 0.45.5
   '@vitejs/plugin-vue': 2.3.3
   '@vitest/ui': 0.21.0
+  '@vueuse/core': 9.1.0
   '@vueuse/nuxt': 9.1.0
   c8: 7.12.0
   cypress: 10.4.0
@@ -63,7 +65,7 @@ devDependencies:
   sass: 1.54.3
   sass-loader: 13.0.2_sass@1.54.3
   swiper: 8.3.2
-  unplugin-auto-import: 0.11.1
+  unplugin-auto-import: 0.11.1_@vueuse+core@9.1.0
   vitest: 0.21.0_f34q2nlpz7ryg6txjuyu2vmcfy
 
 packages:
@@ -679,11 +681,11 @@ packages:
       - webpack
     dev: true
 
-  /@nuxt/kit-edge/3.0.0-rc.8-27681070.ad63817:
-    resolution: {integrity: sha512-hXynowBSEvXcIY3k/a0zQTH0kF2PJmPAluspAxgqvaqUNz0xCKNMhmjiyll6AX6A34z4cZQe92XBPBj3brnL/A==}
+  /@nuxt/kit-edge/3.0.0-rc.8-27687584.51dc736:
+    resolution: {integrity: sha512-pcnRLYpgMIwK5jXWCkVBDRD+6n8kEV9wHchVnZ0w/zujTxAC6E5BDaH2F9NEI9j7X181cZu/dv1l0R/U5jPRYg==}
     engines: {node: ^14.16.0 || ^16.11.0 || ^17.0.0 || ^18.0.0}
     dependencies:
-      '@nuxt/schema': /@nuxt/schema-edge/3.0.0-rc.8-27681070.ad63817
+      '@nuxt/schema': /@nuxt/schema-edge/3.0.0-rc.8-27687584.51dc736
       c12: 0.2.9
       consola: 2.15.3
       defu: 6.1.0
@@ -693,7 +695,7 @@ packages:
       jiti: 1.14.0
       knitwork: 0.1.2
       lodash.template: 4.5.0
-      mlly: 0.5.13
+      mlly: 0.5.14
       pathe: 0.3.5
       pkg-types: 0.3.4
       scule: 0.3.2
@@ -784,8 +786,8 @@ packages:
       - webpack
     dev: true
 
-  /@nuxt/schema-edge/3.0.0-rc.8-27681070.ad63817:
-    resolution: {integrity: sha512-+9rOZsqs8IUwup3H7HNCTVtRDxPW1qsZZ5yANG7Cgs8P82/TmZIXjlwKic0jVAouLQzPZTfkjYgVleTvogb9Yg==}
+  /@nuxt/schema-edge/3.0.0-rc.8-27687584.51dc736:
+    resolution: {integrity: sha512-KKxSXqky4aEJGD8byFODyKQDV6wTfhj1poyH5hZQC1R2B45k4DGIIz01PiOoJsOs+gzJBgOhS6/gqq08w3ibbQ==}
     engines: {node: ^14.16.0 || ^16.11.0 || ^17.0.0 || ^18.0.0}
     dependencies:
       c12: 0.2.9
@@ -5086,6 +5088,15 @@ packages:
       ufo: 0.8.5
     dev: true
 
+  /mlly/0.5.14:
+    resolution: {integrity: sha512-DgRgNUSX9NIxxCxygX4Xeg9C7GX7OUx1wuQ8cXx9o9LE0e9wrH+OZ9fcnrlEedsC/rtqry3ZhUddC759XD/L0w==}
+    dependencies:
+      acorn: 8.8.0
+      pathe: 0.3.5
+      pkg-types: 0.3.4
+      ufo: 0.8.5
+    dev: true
+
   /mlly/0.5.7:
     resolution: {integrity: sha512-rz+n2i9862ymLH+UDlHpsuTVyCIAs+9WejS2De2VUlAKdpq8OJ9x/C2M7nNUMLEW1H+D6n0uZlpz8+tMGxCmyQ==}
     dependencies:
@@ -5337,7 +5348,7 @@ packages:
   /nuxt-icons/2.0.1:
     resolution: {integrity: sha512-V42PZF0DYUnff6KuFLnbzd09/Q4q6863dmJn6FZ5sPysIix9I2Jm4SMQhKQl2ODKjvsHDPtcTw3kQ0JIwPbXXQ==}
     dependencies:
-      '@nuxt/kit': /@nuxt/kit-edge/3.0.0-rc.8-27681070.ad63817
+      '@nuxt/kit': /@nuxt/kit-edge/3.0.0-rc.8-27687584.51dc736
     transitivePeerDependencies:
       - esbuild
       - rollup
@@ -7448,7 +7459,7 @@ packages:
       fast-glob: 3.2.11
       local-pkg: 0.4.2
       magic-string: 0.26.2
-      mlly: 0.5.13
+      mlly: 0.5.14
       pathe: 0.3.5
       scule: 0.3.2
       strip-literal: 0.4.0
@@ -7501,7 +7512,7 @@ packages:
       - vite
     dev: true
 
-  /unplugin-auto-import/0.11.1:
+  /unplugin-auto-import/0.11.1_@vueuse+core@9.1.0:
     resolution: {integrity: sha512-3KMbjc3Sv2h1osgQ16uKmD2XHb8MLK3Lj5Twzo3x2vDexYdNKjVljLZUX+eT5cvh2f1VzJR77dkzDhdEi9+1uw==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -7512,6 +7523,7 @@ packages:
     dependencies:
       '@antfu/utils': 0.5.2
       '@rollup/pluginutils': 4.2.1
+      '@vueuse/core': 9.1.0
       local-pkg: 0.4.2
       magic-string: 0.26.2
       unimport: 0.6.5
