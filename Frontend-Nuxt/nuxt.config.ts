@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       title: 'Groceyish',
-
+      htmlAttrs: { lang: 'en' },
       link: [
         // Favicon
         {

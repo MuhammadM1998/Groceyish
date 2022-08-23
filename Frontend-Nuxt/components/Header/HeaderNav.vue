@@ -109,25 +109,25 @@
 
           <ul>
             <li>
-              <a href="">
+              <a href="" aria-label="Facebook">
                 <span i-bxl-facebook></span>
               </a>
             </li>
 
             <li>
-              <a href="">
+              <a href="" aria-label="Twitter">
                 <span i-bxl-twitter></span>
               </a>
             </li>
 
             <li>
-              <a href="">
+              <a href="" aria-label="Linkedin">
                 <span i-bxl-linkedin></span>
               </a>
             </li>
 
             <li>
-              <a href="">
+              <a href="" aria-label="Instagram">
                 <span i-bxl-instagram></span>
               </a>
             </li>

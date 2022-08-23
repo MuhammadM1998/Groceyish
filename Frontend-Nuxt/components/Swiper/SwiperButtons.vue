@@ -6,13 +6,13 @@
 
 <template>
   <div class="swiper-controls">
-    <button :class="`${name}-swiper-prev`">
+    <button :class="`${name}-swiper-prev`" aria-label="previous-item">
       <span block i-bx-left-arrow-alt></span>
     </button>
 
     <slot />
 
-    <button :class="`${name}-swiper-next`">
+    <button :class="`${name}-swiper-next`" aria-label="next-item">
       <span block i-bx-right-arrow-alt></span>
     </button>
   </div>

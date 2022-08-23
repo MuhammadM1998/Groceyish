@@ -191,7 +191,11 @@
 
           <!-- Pagination -->
           <div class="pagination-controls">
-            <button v-if="previousPage" @click="currentPage--">
+            <button
+              v-if="previousPage"
+              aria-label="Previous Page"
+              @click="currentPage--"
+            >
               <span block i-bx-left-arrow-alt></span>
             </button>
 
@@ -202,7 +206,11 @@
               <span>{{ numberOfPages }}</span>
             </p>
 
-            <button v-if="nextPage <= numberOfPages" @click="currentPage++">
+            <button
+              v-if="nextPage <= numberOfPages"
+              aria-label="Next Page"
+              @click="currentPage++"
+            >
               <span block i-bx-right-arrow-alt></span>
             </button>
           </div>

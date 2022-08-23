@@ -78,19 +78,19 @@
 
         <ul class="mt-4 flex gap-4 text-xl">
           <li class="social-icon">
-            <a href="#" i-bxl-facebook></a>
+            <a href="" i-bxl-facebook aria-label="Facebook" />
           </li>
 
           <li class="social-icon">
-            <a href="#" i-bxl-linkedin></a>
+            <a href="" i-bxl-linkedin aria-label="Linkedin" />
           </li>
 
           <li class="social-icon">
-            <a href="#" i-bxl-instagram></a>
+            <a href="" i-bxl-instagram aria-label="Instagram" />
           </li>
 
           <li class="social-icon">
-            <a href="#" i-bxl-twitter></a>
+            <a href="" i-bxl-twitter aria-label="Twitter" />
           </li>
         </ul>
       </div>

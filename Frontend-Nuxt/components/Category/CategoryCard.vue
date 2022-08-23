@@ -12,7 +12,7 @@
   <NuxtLink :to="`/categories/${category.id}`" class="category-card">
     <img
       :src="category?.attributes?.Image?.data?.attributes?.url"
-      :alt="category.Name"
+      :alt="category.attributes.Name"
       class="category-img"
     />
 

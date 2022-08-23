@@ -26,12 +26,12 @@
         <p class="font-medium text-gray-200">Available on both IOS & Android</p>
 
         <div class="flex items-center gap-2">
-          <button>
-            <NuxtImg src="app-store" />
+          <button aria-label="app-store">
+            <NuxtImg src="app-store" aria-label="app-store" />
           </button>
 
-          <button>
-            <NuxtImg src="google-play" />
+          <button aria-label="google-play">
+            <NuxtImg src="google-play" aria-label="google-play" />
           </button>
         </div>
       </div>
